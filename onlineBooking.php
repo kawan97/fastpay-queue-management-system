@@ -33,7 +33,7 @@
 	<header class="navbar-info position-none">
 		<nav class="navbar navbar-expand-lg navbar-light navbar-me header inner">
   			<div class="container">
-  				<a class="navbar-brand" href="index.html"><img src="images/brand-img2.png" alt="logo"></a>
+  				<a class="navbar-brand" href="index.php"><img src="images/brand-img2.png" alt="logo"></a>
       			<button class="navbar-toggler navbar-icon" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span><span class="navbar-toggler-icon"></span><span class="navbar-toggler-icon"></span><span class="navbar-toggler-icon"></span></button>
 	      		<div class="collapse navbar-collapse float-right pt-0 mt-0" id="navbarNav">
 	            	<ul class="nav navbar-nav ml-lg-auto mr-lg-0">
@@ -117,7 +117,7 @@
 				<h1 class="head-one">ONLINE BOOKING</h1>
 				<div class="custom-bread">
                     <ul class="breadcrumb inline">
-                        <li><a href="index.html">Home</a></li>
+                        <li><a href="index.php">Home</a></li>
                         <li>Online Booking</li>
                     </ul>
                 </div>
@@ -129,34 +129,34 @@
 					<div class="col-12 col-lg-12 col-xl-12">
 						<div class="row">
 							<div class="col-xs-12 col-md-3 img-box blog-content">
-								<a href="blog-detail.html" class="zoom"><img src="images/blog-img1.jpg" alt="blog-img1"></a>
+								<a href="blog-detail.php" class="zoom"><img src="images/blog-img1.jpg" alt="blog-img1"></a>
 								<div class="blog-detail">
 									<p class="bloger-date">Balance</p>
-									<h3 class="head-three"><a href="blog-detail.html">Deposit/withdraw Balance</a></h3>
+									<h3 class="head-three"><a href="blog-detail.php">Deposit/withdraw Balance</a></h3>
 									<a class="readmore-btn pop">Choose</a>
 								</div>
 							</div>
 							<div class="col-xs-12 col-md-3 img-box blog-content">
-								<a href="blog-detail.html" class="zoom"><img src="images/blog-img2.jpg" alt="blog-img2"></a>
+								<a href="blog-detail.php" class="zoom"><img src="images/blog-img2.jpg" alt="blog-img2"></a>
 								<div class="blog-detail">
 									<p class="bloger-date">Internet Service</p>
-									<h3 class="head-three"><a href="blog-detail.html">Request Internet Services</a></h3>
+									<h3 class="head-three"><a href="blog-detail.php">Request Internet Services</a></h3>
 									<a class="readmore-btn pop">Choose</a>
 								</div>
 							</div>
 							<div class="col-xs-12 col-md-3 img-box blog-content">
-								<a href="blog-detail.html" class="zoom"><img src="images/blog-img3.jpg" alt="blog-img3"></a>
+								<a href="blog-detail.php" class="zoom"><img src="images/blog-img3.jpg" alt="blog-img3"></a>
 								<div class="blog-detail">
 									<p class="bloger-date">Service Issue</p>
-									<h3 class="head-three"><a href="blog-detail.html">Service Issues</a></h3>
+									<h3 class="head-three"><a href="blog-detail.php">Service Issues</a></h3>
 									<a class="readmore-btn pop">Choose</a>
 								</div>
 							</div>
 							<div class="col-xs-12 col-md-3 img-box blog-content">
-								<a href="blog-detail.html" class="zoom"><img src="images/blog-img4.jpg" alt="blog-img4"></a>
+								<a href="blog-detail.php" class="zoom"><img src="images/blog-img4.jpg" alt="blog-img4"></a>
 								<div class="blog-detail">
 									<p class="bloger-date">MyTV+</p>
-									<h3 class="head-three"><a href="blog-detail.html">Issues with MyTV+</a></h3>
+									<h3 class="head-three"><a href="blog-detail.php">Issues with MyTV+</a></h3>
 									<a class="readmore-btn pop">Choose</a>
 								</div>
 							</div>
@@ -206,7 +206,7 @@
 			<div class="container pb-100 pb-60-md">
 				<div class="row">
 					<div class="col-12 col-md-4">
-						<a href="index.html"><img src="images/brand-img2.png" alt="logo"></a>
+						<a href="index.php"><img src="images/brand-img2.png" alt="logo"></a>
 						<p class="footer-p">FastPay is the safer, easier way to pay and get paid online. Discover the best FastPay offering and choose from the different services we provide for online payment.</p>
 						<div class="social-media">	
 							<a href="https://www.facebook.com/fastpaycash/" target="_blank"><i class="fa fa-facebook"></i></a>
@@ -219,18 +219,18 @@
 						<h3 class="head-three">Usefull Link</h3>
 						<div class="head-line"></div>
 						<ul class="footer-menu">
-							<li><a href="index.html">About Us</a></li>
-							<li><a href="index.html">Services</a></li>
-							<li><a href="index.html">Contact</a></li>
+							<li><a href="index.php">About Us</a></li>
+							<li><a href="index.php">Services</a></li>
+							<li><a href="index.php">Contact</a></li>
 						</ul>
 					</div>
 					<div class="col-12 col-md-3">
 						<h3 class="head-three">Services</h3>
 						<div class="head-line"></div>
 						<ul class="footer-menu">
-							<li><a href="index.html">Delivery Service</a></li>
-							<li><a href="index.html">Showroom Service</a></li>
-							<li><a href="index.html">Online Booking</a></li>
+							<li><a href="index.php">Delivery Service</a></li>
+							<li><a href="index.php">Showroom Service</a></li>
+							<li><a href="index.php">Online Booking</a></li>
 						</ul>
 					</div>
 					<div class="col-12 col-md-3">
@@ -249,7 +249,7 @@
 					<div class="row">
 						<div class="col-12">
 							<div class="w-100">
-								<p class="mb-0">&copy; All Rights Reserved by <a href="index.html" target="#" title="FastPay">FastPay</a></p>
+								<p class="mb-0">&copy; All Rights Reserved by <a href="index.php" target="#" title="FastPay">FastPay</a></p>
 							</div>
 						</div>
 					</div>
@@ -288,7 +288,7 @@
 			  text: "Your Number is ...",
 			  icon: "success",
 			}).then(function() {
-   				window.location = "index.html";
+   				window.location = "index.php";
 		});
 		});
 	</script>

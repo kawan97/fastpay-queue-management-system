@@ -33,7 +33,7 @@
 	<header class="navbar-info position-none">
 		<nav class="navbar navbar-expand-lg navbar-light navbar-me header inner">
   			<div class="container">
-  				<a class="navbar-brand" href="index.html"><img src="images/brand-img2.png" alt="logo"></a>
+  				<a class="navbar-brand" href="index.php"><img src="images/brand-img2.png" alt="logo"></a>
       			<button class="navbar-toggler navbar-icon" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span><span class="navbar-toggler-icon"></span><span class="navbar-toggler-icon"></span><span class="navbar-toggler-icon"></span></button>
 	      		<div class="collapse navbar-collapse float-right pt-0 mt-0" id="navbarNav">
 	            	<ul class="nav navbar-nav ml-lg-auto mr-lg-0">
@@ -117,7 +117,7 @@
 				<h1 class="head-one">DELIVERY SERVICE</h1>
 				<div class="custom-bread">
                     <ul class="breadcrumb inline">
-                        <li><a href="index.html">Home</a></li>
+                        <li><a href="index.php">Home</a></li>
                         <li>Delivery Service</li>
                     </ul>
                 </div>
@@ -206,7 +206,7 @@
 			<div class="container pb-100 pb-60-md">
 				<div class="row">
 					<div class="col-12 col-md-4">
-						<a href="index.html"><img src="images/brand-img2.png" alt="logo"></a>
+						<a href="index.php"><img src="images/brand-img2.png" alt="logo"></a>
 						<p class="footer-p">FastPay is the safer, easier way to pay and get paid online. Discover the best FastPay offering and choose from the different services we provide for online payment.</p>
 						<div class="social-media">	
 							<a href="https://www.facebook.com/fastpaycash/" target="_blank"><i class="fa fa-facebook"></i></a>
@@ -219,18 +219,18 @@
 						<h3 class="head-three">Usefull Link</h3>
 						<div class="head-line"></div>
 						<ul class="footer-menu">
-							<li><a href="index.html">About Us</a></li>
-							<li><a href="index.html">Services</a></li>
-							<li><a href="index.html">Contact</a></li>
+							<li><a href="index.php">About Us</a></li>
+							<li><a href="index.php">Services</a></li>
+							<li><a href="index.php">Contact</a></li>
 						</ul>
 					</div>
 					<div class="col-12 col-md-3">
 						<h3 class="head-three">Services</h3>
 						<div class="head-line"></div>
 						<ul class="footer-menu">
-							<li><a href="index.html">Delivery Service</a></li>
-							<li><a href="index.html">Showroom Service</a></li>
-							<li><a href="index.html">Online Booking</a></li>
+							<li><a href="index.php">Delivery Service</a></li>
+							<li><a href="index.php">Showroom Service</a></li>
+							<li><a href="index.php">Online Booking</a></li>
 						</ul>
 					</div>
 					<div class="col-12 col-md-3">
@@ -249,7 +249,7 @@
 					<div class="row">
 						<div class="col-12">
 							<div class="w-100">
-								<p class="mb-0">&copy; All Rights Reserved by <a href="index.html" target="#" title="FastPay">FastPay</a></p>
+								<p class="mb-0">&copy; All Rights Reserved by <a href="index.php" target="#" title="FastPay">FastPay</a></p>
 							</div>
 						</div>
 					</div>

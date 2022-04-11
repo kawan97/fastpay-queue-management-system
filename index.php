@@ -33,7 +33,7 @@
 	<header class="navbar-info">
 		<nav class="navbar navbar-expand-lg navbar-light navbar-me header">
   			<div class="container">
-  				<a class="navbar-brand logo" href="index.html"><img src="images/brand-img2.png" alt="logo"></a>
+  				<a class="navbar-brand logo" href="index.php"><img src="images/brand-img2.png" alt="logo"></a>
       			<button class="navbar-toggler navbar-icon" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span><span class="navbar-toggler-icon"></span><span class="navbar-toggler-icon"></span><span class="navbar-toggler-icon"></span></button>
 	      		<div class="collapse navbar-collapse float-right pt-0 mt-0" id="navbarNav">
 		            <ul class="nav navbar-nav ml-lg-auto mr-lg-0">
@@ -177,7 +177,7 @@
 											<li>Service Issue</li>
 											<li>MyTV+</li>
 										</ul>
-										<a href="delivery.html" class="purchase-btn">CHOOSE</a>
+										<a href="delivery.php" class="purchase-btn">CHOOSE</a>
 									</div>
 								</div>
 								<div class="col-xs-12 col-lg-4 p-lg-0">
@@ -189,7 +189,7 @@
 											<li>Service Issue</li>
 											<li>MyTV+</li>
 										</ul>
-										<a href="showroom.html" class="purchase-btn">CHOOSE</a>
+										<a href="showroom.php" class="purchase-btn">CHOOSE</a>
 									</div>
 								</div>
 								<div class="col-xs-12 col-lg-4 p-lg-0 fadeInLeft hidden">
@@ -201,7 +201,7 @@
 											<li>Service Issue</li>
 											<li>MyTV+</li>
 										</ul>
-										<a href="onlineBooking.html" class="purchase-btn">CHOOSE</a>
+										<a href="onlineBooking.php" class="purchase-btn">CHOOSE</a>
 									</div>
 								</div>
 							</div>
@@ -529,7 +529,7 @@
 			<div class="container pb-100 pb-60-md">
 				<div class="row">
 					<div class="col-12 col-md-4">
-						<a href="index.html"><img src="images/brand-img2.png" alt="logo"></a>
+						<a href="index.php"><img src="images/brand-img2.png" alt="logo"></a>
 						<p class="footer-p">FastPay is the safer, easier way to pay and get paid online. Discover the best FastPay offering and choose from the different services we provide for online payment.</p>
 						<div class="social-media">	
 							<a href="https://www.facebook.com/fastpaycash/" target="_blank"><i class="fa fa-facebook"></i></a>
@@ -572,7 +572,7 @@
 					<div class="row">
 						<div class="col-12">
 							<div class="w-100">
-								<p class="mb-0">&copy; All Rights Reserved by <a href="index.html" target="#" title="FastPay">FastPay</a></p>
+								<p class="mb-0">&copy; All Rights Reserved by <a href="index.php" target="#" title="FastPay">FastPay</a></p>
 							</div>
 						</div>
 					</div>

@@ -34,7 +34,7 @@
 				<h1 class="head-one">SHOWROOM SERVICE</h1>
 				<div class="custom-bread">
                     <ul class="breadcrumb inline">
-                        <li><a href="index.html">Home</a></li>
+                        <li><a href="index.php">Home</a></li>
                         <li>Showroom Service</li>
                     </ul>
                 </div>
@@ -46,34 +46,34 @@
 					<div class="col-12 col-lg-12 col-xl-12">
 						<div class="row">
 							<div class="col-xs-12 col-md-3 img-box blog-content">
-								<a href="blog-detail.html" class="zoom"><img src="images/blog-img1.jpg" alt="blog-img1"></a>
+								<a href="blog-detail.php" class="zoom"><img src="images/blog-img1.jpg" alt="blog-img1"></a>
 								<div class="blog-detail">
 									<p class="bloger-date">Balance</p>
-									<h3 class="head-three"><a href="blog-detail.html">Deposit/withdraw Balance</a></h3>
+									<h3 class="head-three"><a href="blog-detail.php">Deposit/withdraw Balance</a></h3>
 									<a class="readmore-btn pop">Choose</a>
 								</div>
 							</div>
 							<div class="col-xs-12 col-md-3 img-box blog-content">
-								<a href="blog-detail.html" class="zoom"><img src="images/blog-img2.jpg" alt="blog-img2"></a>
+								<a href="blog-detail.php" class="zoom"><img src="images/blog-img2.jpg" alt="blog-img2"></a>
 								<div class="blog-detail">
 									<p class="bloger-date">Internet Service</p>
-									<h3 class="head-three"><a href="blog-detail.html">Request Internet Services</a></h3>
+									<h3 class="head-three"><a href="blog-detail.php">Request Internet Services</a></h3>
 									<a class="readmore-btn pop">Choose</a>
 								</div>
 							</div>
 							<div class="col-xs-12 col-md-3 img-box blog-content">
-								<a href="blog-detail.html" class="zoom"><img src="images/blog-img3.jpg" alt="blog-img3"></a>
+								<a href="blog-detail.php" class="zoom"><img src="images/blog-img3.jpg" alt="blog-img3"></a>
 								<div class="blog-detail">
 									<p class="bloger-date">Service Issue</p>
-									<h3 class="head-three"><a href="blog-detail.html">Service Issues</a></h3>
+									<h3 class="head-three"><a href="blog-detail.php">Service Issues</a></h3>
 									<a class="readmore-btn pop">Choose</a>
 								</div>
 							</div>
 							<div class="col-xs-12 col-md-3 img-box blog-content">
-								<a href="blog-detail.html" class="zoom"><img src="images/blog-img4.jpg" alt="blog-img4"></a>
+								<a href="blog-detail.php" class="zoom"><img src="images/blog-img4.jpg" alt="blog-img4"></a>
 								<div class="blog-detail">
 									<p class="bloger-date">MyTV+</p>
-									<h3 class="head-three"><a href="blog-detail.html">Issues with MyTV+</a></h3>
+									<h3 class="head-three"><a href="blog-detail.php">Issues with MyTV+</a></h3>
 									<a class="readmore-btn pop">Choose</a>
 								</div>
 							</div>

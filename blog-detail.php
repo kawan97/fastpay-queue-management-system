@@ -32,24 +32,24 @@
 	<header class="navbar-info position-none">
 		<nav class="navbar navbar-expand-lg navbar-light navbar-me header inner">
   			<div class="container">
-  				<a class="navbar-brand" href="index.html"><img src="images/logo.png" alt="logo"></a>
+  				<a class="navbar-brand" href="index.php"><img src="images/logo.png" alt="logo"></a>
       			<button class="navbar-toggler navbar-icon" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span><span class="navbar-toggler-icon"></span><span class="navbar-toggler-icon"></span><span class="navbar-toggler-icon"></span></button>
 	      		<div class="collapse navbar-collapse float-right pt-0 mt-0" id="navbarNav">
 	            	<ul class="nav navbar-nav ml-lg-auto mr-lg-0">
 	            		<li class="page-scroll nav-item active">
-		                    <a class="nav-link active fadeinleftbig hidden delay1" href="index.html#banner-part">HOME</a>
+		                    <a class="nav-link active fadeinleftbig hidden delay1" href="index.php#banner-part">HOME</a>
 		                </li>
 		                <li class="nav-item">
-		                    <a class="nav-link fadeinleftbig hidden delay2" href="index.html#about-part">ABOUT</a>
+		                    <a class="nav-link fadeinleftbig hidden delay2" href="index.php#about-part">ABOUT</a>
 		                </li>
 		                <li class="nav-item">
-		                    <a class="nav-link fadeinleftbig hidden delay3" href="index.html#price-part">PRICING</a>
+		                    <a class="nav-link fadeinleftbig hidden delay3" href="index.php#price-part">PRICING</a>
 		                </li>
 		                <li class="nav-item">
-		                    <a class="nav-link fadeinleftbig hidden delay4" href="index.html#news-part">BLOG</a>
+		                    <a class="nav-link fadeinleftbig hidden delay4" href="index.php#news-part">BLOG</a>
 		                </li>
 		                <li class="nav-item">
-		                    <a class="nav-link fadeinleftbig hidden delay5" href="index.html#contact-part">CONTACT</a>
+		                    <a class="nav-link fadeinleftbig hidden delay5" href="index.php#contact-part">CONTACT</a>
 		                </li>
 		                <li class="nav-item">
 		                	<a href="#quote-popup" class="quote-btn animall open-popup-link fadeinleftbig hidden delay6" id="quote-btn" data-effect="mfp-move-horizontal">GET A QUOTE</a>
@@ -121,8 +121,8 @@
 				<h1 class="head-one">BLOG DETAIL</h1>
 				<div class="custom-bread">
                     <ul class="breadcrumb inline">
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="index.php">Home</a></li>
+                        <li><a href="blog.php">Blog</a></li>
                         <li>Blog Detail</li>
                     </ul>
                 </div>
@@ -242,24 +242,24 @@
                                         <h2 class="cat-title">Popular Posts</h2>
                                         <div class="recent-post">
                                             <div class="recent inline">
-                                                <a href="blog-detail.html"><img src="images/post-img1.jpg" alt="related-prod-img"></a>
+                                                <a href="blog-detail.php"><img src="images/post-img1.jpg" alt="related-prod-img"></a>
                                                 <div class="recent-detail">
                                                 	<span class="post-date">28 Oct 2019</span>
-                                                    <a href="blog-detail.html" class="post-title">Cras et mauris eu tellus laoreet</a>
+                                                    <a href="blog-detail.php" class="post-title">Cras et mauris eu tellus laoreet</a>
                                                 </div>
                                             </div>
                                             <div class="recent inline">
-                                                <a href="blog-detail.html"><img src="images/post-img2.jpg" alt="related-prod-img"></a>
+                                                <a href="blog-detail.php"><img src="images/post-img2.jpg" alt="related-prod-img"></a>
                                                 <div class="recent-detail">
                                                 	<span class="post-date">10 Oct 2019</span>
-                                                    <a href="blog-detail.html" class="post-title">Proin vestibulum eleifend felis et</a>
+                                                    <a href="blog-detail.php" class="post-title">Proin vestibulum eleifend felis et</a>
                                                 </div>
                                             </div>
                                             <div class="recent inline">
-                                                <a href="blog-detail.html"><img src="images/post-img3.jpg" alt="related-prod-img"></a>
+                                                <a href="blog-detail.php"><img src="images/post-img3.jpg" alt="related-prod-img"></a>
                                                 <div class="recent-detail">
                                                 	<span class="post-date">28 Sep 2019</span>
-                                                    <a href="blog-detail.html" class="post-title">Do am he horrible dist marriage</a>
+                                                    <a href="blog-detail.php" class="post-title">Do am he horrible dist marriage</a>
                                                 </div>
                                             </div>
                                         </div>
@@ -326,7 +326,7 @@
 			<div class="container pb-100 pb-60-md">
 				<div class="row">
 					<div class="col-12 col-md-4">
-						<a href="index.html"><img src="images/logo.png" alt="logo"></a>
+						<a href="index.php"><img src="images/logo.png" alt="logo"></a>
 						<p class="footer-p">Etiam sit amet orci eget eros faucibus tincidunt. Duis leo. Sed fringilla mauris sit amet nibh mauris sit amet nibh. Donec sodales sagittis</p>
 						<div class="social-media">	
 							<a href="javascript:void(0)"><i class="fa fa-facebook"></i></a>
