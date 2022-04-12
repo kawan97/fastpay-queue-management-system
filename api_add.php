@@ -1,4 +1,9 @@
 <?php
+        use PHPMailer\PHPMailer\PHPMailer;
+        use PHPMailer\PHPMailer\SMTP;
+        use PHPMailer\PHPMailer\Exception;
+        
+        require_once "vendor/autoload.php";
 header("Content-Type: application/json; charset=UTF-8");
 header("Access-Control-Allow-Origin: *");
 header("Access-Control-Allow-Methods: POST");
@@ -40,8 +45,52 @@ if($typeid == 1){
     $execu=$pdo->prepare($sql);
     $execu->execute(array($name,$phone,$address,$serviceid));
     if($execu){
+        //send email to customer
+        $mail = new PHPMailer(true);
+        
+        //Enable SMTP debugging.
+        $mail->SMTPDebug = false;                               
+        //Set PHPMailer to use SMTP.
+        $mail->isSMTP();            
+        //Set SMTP host name                          
+        $mail->Host = "";
+        //Set this to true if SMTP host requires authentication to send email
+        $mail->SMTPAuth = true;                          
+        //Provide username and password     
+        $mail->Username = "";                 
+        $mail->Password = "";                           
+        //If SMTP requires TLS encryption then set it
+        $mail->SMTPSecure = "tls";                           
+        //Set TCP port to connect to
+        $mail->Port = 2525;                                   
+        
+        $mail->From = "kawan.192707@spu.edu.iq";
+        $mail->FromName = "From Fastpay Queue System";
+        
+        $mail->addAddress("pshtiwankawan@gmail.com", $name);
+        
+        $mail->isHTML(true);
+        
+        $mail->Subject = "Contact Us Query By the Customer";
+        $mail->Body = "<p>name:".$name."</p><br>
+        <p>phone:".$phone."</p><br>
+        <p>addess:".$address."</p><br>";
+        // $mail->AltBody = "This is the plain text version of the email content";
+        
+        try {
+            $mail->send();
+                    //send email to customer
         echo json_encode(array("message" => 'you successfully add delivery'));
-        http_response_code(201);  
+        http_response_code(201); 
+            // echo "Message has been sent successfully";
+        } catch (Exception $e) {
+            // echo "Mailer Error: " . $mail->ErrorInfo;
+                    //send email to customer
+        echo json_encode(array("message" => 'sorry you have an error in sending email to customer'));
+        http_response_code(400); 
+        }
+
+ 
     }else{
         echo json_encode(array("message" => "you have an error"));
         http_response_code(400);   

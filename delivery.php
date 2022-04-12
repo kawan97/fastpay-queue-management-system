@@ -382,20 +382,7 @@ $.ajax(options);
 		});
 	</script>
 
-<script>
-	function sendMail(){
 
-    Email.send({
-        Host: "smtp.mailtrap.io",
-        Username: "544f691b3be6d2",
-        Password: "fb9ddc04a7c9e4",
-        To: "phtiwankawan@gmail.com",
-        From: email,
-        Subject: "Contact Us Query By the Customer",
-        Body: msg + "<br>" + name + "<br>" + phone
-    }).then(msg => alert("The email successfully sent"))
-    	}
-</script>
 	
 </body>
 </html>
