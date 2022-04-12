@@ -133,7 +133,7 @@
 								<div class="blog-detail">
 									<p class="bloger-date">Balance</p>
 									<h3 class="head-three"><a>Deposit/withdraw Balance</a></h3>
-									<a class="readmore-btn pop">Choose</a>
+									<a data-number="1" class="readmore-btn pop">Choose</a>
 								</div>
 							</div>
 							<div class="col-xs-12 col-md-3 img-box blog-content">
@@ -141,7 +141,7 @@
 								<div class="blog-detail">
 									<p class="bloger-date">Internet Service</p>
 									<h3 class="head-three"><a>Request Internet Services</a></h3>
-									<a class="readmore-btn pop">Choose</a>
+									<a data-number="2" class="readmore-btn pop">Choose</a>
 								</div>
 							</div>
 							<div class="col-xs-12 col-md-3 img-box blog-content">
@@ -149,7 +149,7 @@
 								<div class="blog-detail">
 									<p class="bloger-date">Service Issue</p>
 									<h3 class="head-three"><a>Service Issues</a></h3>
-									<a class="readmore-btn pop">Choose</a>
+									<a data-number="3" class="readmore-btn pop">Choose</a>
 								</div>
 							</div>
 							<div class="col-xs-12 col-md-3 img-box blog-content">
@@ -157,7 +157,7 @@
 								<div class="blog-detail">
 									<p class="bloger-date">MyTV+</p>
 									<h3 class="head-three"><a>Issues with MyTV+</a></h3>
-									<a class="readmore-btn pop">Choose</a>
+									<a data-number="4" class="readmore-btn pop">Choose</a>
 								</div>
 							</div>
 							
@@ -286,7 +286,11 @@
 
 	</script>
 		<script>
-		$(".pop").click(function(){
+		$(".pop").click(function(e){
+			var subtypeid=e.target.getAttribute("data-number");
+			var name='';
+			var phone='';
+			var address='';
 	Swal.fire({
   title: 'Please provide the following:',
   html: `<input type="text" id="name" class="swal2-input" placeholder="Name">
@@ -295,50 +299,97 @@
   confirmButtonText: 'Confirm',
   focusConfirm: false,
   preConfirm: () => {
-    const name = Swal.getPopup().querySelector('#name').value
-    const phone = Swal.getPopup().querySelector('#phone').value
+	var check=true;
+
+     name = Swal.getPopup().querySelector('#name').value
+     phone = Swal.getPopup().querySelector('#phone').value
     var phoneN = Swal.getPopup().querySelector('#phone').value
     var phoneNum = phoneN.toString();
     if(phoneNum[0]!='0' || phoneNum[1]!='7' || ( phoneNum[2]!='5' && phoneNum[2]!='7' && phoneNum[2]!='8' )){
     	Swal.showValidationMessage(`Not a valid phone number!`)
+		var check=false;
+
     }
     if(phoneNum.length!=11){
 Swal.showValidationMessage(`Not a valid phone number!`)
+var check=false;
     }
-    const address = Swal.getPopup().querySelector('#address').value
+     address = Swal.getPopup().querySelector('#address').value
     if(isNaN(phone)){
     		Swal.showValidationMessage(`Not a valid phone number!`)
+			var check=false;
+
  			}
     if (!name || !phone || !address) {
     	if(!isNaN(phone)){
     		Swal.showValidationMessage(`Please provide the details.`)
+			var check=false;
+
  			}
       
     }
-    return { name: name, phone: phone, address: address }
+	 
+	// add to db
+	if(check==true){
+		objfordelivery = {
+            "typeid": '1',
+            "subtypeid": subtypeid,
+            "address": address,
+            "phone": phone,
+            "name": name,
+        };
+	var json = JSON.stringify(objfordelivery);
+
+var options = {
+	url: "api_add.php",
+	dataType: "json",
+	type: "POST",
+	data: json,
+
+	success: function(data, status, xhr) {
+		// console.log(data)
+		// console.log(status)
+		return { name: name, phone: phone, address: address }
+	},
+	error: function(xhr, status, error) {
+		// console.log(error)
+		Swal.showValidationMessage(`you have an error in adding to db.`)
+
+	}
+};
+$.ajax(options);
+
+	}
+	
+	//nd add to db
+    
   }
 }).then((result) => {
-  Swal.fire(
+	if(result.isConfirmed){
+		Swal.fire(
     'Thanks',
   	'You will be contacted shortly',
   'success'
   .trim()
   ).then(
-        sendMail()
+
+        // sendMail()
     );
+	}
+
 
 })
 		});
 	</script>
 
 <script>
-	function sendEmail(){
+	function sendMail(){
 
     Email.send({
         Host: "smtp.mailtrap.io",
         Username: "544f691b3be6d2",
         Password: "fb9ddc04a7c9e4",
-        To: "halgwrd.kh@gmail.com",
+        To: "phtiwankawan@gmail.com",
         From: email,
         Subject: "Contact Us Query By the Customer",
         Body: msg + "<br>" + name + "<br>" + phone

@@ -133,7 +133,7 @@
 								<div class="blog-detail">
 									<p class="bloger-date">Balance</p>
 									<h3 class="head-three"><a href="blog-detail.php">Deposit/withdraw Balance</a></h3>
-									<a class="readmore-btn pop">Choose</a>
+									<a data-number="1" class="readmore-btn pop">Choose</a>
 								</div>
 							</div>
 							<div class="col-xs-12 col-md-3 img-box blog-content">
@@ -141,7 +141,7 @@
 								<div class="blog-detail">
 									<p class="bloger-date">Internet Service</p>
 									<h3 class="head-three"><a href="blog-detail.php">Request Internet Services</a></h3>
-									<a class="readmore-btn pop">Choose</a>
+									<a data-number="2" class="readmore-btn pop">Choose</a>
 								</div>
 							</div>
 							<div class="col-xs-12 col-md-3 img-box blog-content">
@@ -149,7 +149,7 @@
 								<div class="blog-detail">
 									<p class="bloger-date">Service Issue</p>
 									<h3 class="head-three"><a href="blog-detail.php">Service Issues</a></h3>
-									<a class="readmore-btn pop">Choose</a>
+									<a data-number="3" class="readmore-btn pop">Choose</a>
 								</div>
 							</div>
 							<div class="col-xs-12 col-md-3 img-box blog-content">
@@ -157,7 +157,7 @@
 								<div class="blog-detail">
 									<p class="bloger-date">MyTV+</p>
 									<h3 class="head-three"><a href="blog-detail.php">Issues with MyTV+</a></h3>
-									<a class="readmore-btn pop">Choose</a>
+									<a data-number="4" class="readmore-btn pop">Choose</a>
 								</div>
 							</div>
 							
@@ -282,14 +282,51 @@
     });
 	</script>
 	<script>
-		$(".pop").click(function(){
-			swal({
+		$(".pop").click(function(e){
+
+
+			var subtypeid=e.target.getAttribute("data-number");
+			var check=true;
+				// add to db
+	if(check==true){
+        objforbooking = {
+            "typeid": '3',
+            "subtypeid": subtypeid,
+            "time":'13'
+        };
+	var json = JSON.stringify(objforbooking);
+
+var options = {
+	url: "api_add.php",
+	dataType: "json",
+	type: "POST",
+	data: json,
+
+	success: function(data, status, xhr) {
+		// console.log(data['message'])
+		// console.log(status)
+		swal({
 			  title: "Thank you!",
-			  text: "Your Number is ...",
+			  text: data['message'],
 			  icon: "success",
-			}).then(function() {
-   				window.location = "index.php";
-		});
+			})
+		
+	},
+	error: function(xhr, status, error) {
+		// console.log(error)
+		swal.fire({
+			  title: "you have an error!",
+			  text: "sorry you have an error please call support ...",
+			  icon: "error",
+			})
+	}
+};
+$.ajax(options);
+
+	}
+	
+	//nd add to db
+
 		});
 	</script>
 </body>
