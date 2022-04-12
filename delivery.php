@@ -65,22 +65,22 @@
 			</div>
 			<div class="row">
 				<div class="col-lg-7">
-					<form class="quote-form">
+				<form id="form1" class="quote-form">
 				  		<div class="row">
 				    		<div class="col-md">
-				      			<input type="text" class="form-control" placeholder="Name" required>
+				      			<input type="text" class="form-control" name="name" id='inputname' placeholder="Name" required>
 				    		</div>
 				    		<div class="col-md">
-				      			<input type="text" class="form-control" placeholder="Email" required>
+				      			<input type="email" class="form-control" name="email" id='inputemail' placeholder="Email" required>
 				    		</div>
 				  		</div>
 				  		<div class="row">
 				    		<div class="col-md">
-				      			<input type="text" class="form-control" placeholder="Subject" required>
+				      			<input type="text" class="form-control" name="subject" id='inputsubject' placeholder="Subject" required>
 				    		</div>
 				  		</div>
 				  		<div class="form-group">
-						    <textarea class="form-control" placeholder="Message" rows="4" required></textarea>
+						    <textarea class="form-control" placeholder="Message" name="message" id='inputmessage' rows="4" required></textarea>
 						</div>
 						<button type="submit" class="quote-contact-btn">SEND</button>
 					</form>
@@ -180,20 +180,20 @@
 					</div>
 					<div class="col-12 col-md-6">
 						<div class="form-detail">
-                           	<form>
+						<form id="form2" class="contactform">
                                 <div class="row">
 								    <div class="col-xs-12 col-md">
-								      	<input type="text" class="form-control" placeholder="Name" required>
+								      	<input type="text" class="form-control" name="name" id='inputname' placeholder="Name" required>
 								    </div>
 								    <div class="col-xs-12 col-md">
-								      	<input type="text" class="form-control" placeholder="Email" required>
+								      	<input type="email" class="form-control" name="email" id='inputemail' placeholder="Email" required>
 								    </div>
 								</div>
 								<div class="form-group">
-                                    <input type="text" class="form-control" placeholder="Subject" required>
+                                    <input type="text" class="form-control" name="subject" id='inputsubject' placeholder="Subject" required>
                                 </div>
                                 <div class="form-group">
-                                   	<textarea class="form-control" rows="4" placeholder="Message" required></textarea>
+                                   	<textarea class="form-control" rows="4" name="message" id='inputmessage' placeholder="Message" required></textarea>
                                 </div>
                                 <button type="submit" class="send">SEND</button>
                             </form>
@@ -380,6 +380,69 @@ $.ajax(options);
 
 })
 		});
+
+
+
+		
+	//form 
+	const form1 = document.getElementById('form1');
+	const form2 = document.getElementById('form2');
+
+	form1.addEventListener('submit', formSubmit);
+	form2.addEventListener('submit', formSubmit);
+	function formSubmit(event) {
+  		event.preventDefault();
+		var name=event.target.name.value;
+		var email=event.target.email.value;
+		var subject=event.target.subject.value;
+		var message=event.target.message.value;
+		//add to db
+        //obj for booking
+        objforcontact = {
+            "name": name,
+            "email": email,
+            "message":message,
+			"subject":subject,
+        };
+
+        //encoding the obj
+        var json = JSON.stringify(objforcontact);
+
+        var options = {
+            url: "api_add_contact.php",
+            dataType: "json",
+            type: "POST",
+            data: json,
+
+            success: function(data, status, xhr) {
+                // console.log(data)
+                // console.log(status)
+				event.target.message.value="";
+				event.target.subject.value="";
+				event.target.email.value="";
+				event.target.name.value="";
+				swal.fire({
+			  title: "Thank you!",
+			  text: 'your message is sended successfully',
+			  icon: "success",
+			})
+            },
+            error: function(xhr, status, error) {
+                // console.log(error)
+				swal.fire({
+			  title: "you have an error!",
+			  text: "sorry you have an error please call support ...",
+			  icon: "error",
+			})
+            }
+        };
+        $.ajax(options);
+
+		//end add to db
+
+	}
+
+	//end form 
 	</script>
 
 
