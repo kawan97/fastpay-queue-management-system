@@ -40,7 +40,15 @@
                 </div>
 			</div>
 		</div>
-				<div class="blog-part paddingtb">
+		<div class="blog-part paddingtb">
+
+			<?php
+			    if(!isset($_SESSION)) 
+				{ 
+					session_start(); 
+				} 
+			if(isset($_SESSION['username']) && isset($_SESSION['password'])){
+			?>
 			<div class="container">
 				<div class="row">
 					<div class="col-12 col-lg-12 col-xl-12">
@@ -82,6 +90,18 @@
 					</div>
 				</div>
 			</div>
+
+
+			<?php	
+
+			}else{
+				?>
+				<center><h1 class="head-one">Sorry Show Room Service Just Work In Our Office</h1></center>
+				<?php
+			}
+			?>
+			
+
 		</div>
 	</main>
 	<!-- END MAIN-->
@@ -93,7 +113,7 @@
 	<script src="js/viewportchecker.js"></script>
 	<script src="js/custom.js"></script>
 	<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>>
+	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 	<script>
 		jQuery(document).ready(function(){
         	jQuery('.bounceInLeft,.lightSpeedIn,.bounceInUp,.bounceInDown,.bounceInRight,.rotateInUpLeft,.zoomIn,.rubberBand,.rollIn,.rollOut,.zoomInDown,.fadeInDownBig,.fadeInUpBig,.fadeInLeftBig,.fadeInRightBig,.fadeInLeft,.fadeInRight,.flipInX,.rotateInDownRight,.rotateInDownLeft,.float_left_right_two,.fadeInUp,.flash,.fadeinleftbig').addClass("hidden").viewportChecker({
