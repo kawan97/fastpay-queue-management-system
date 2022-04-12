@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Apr 11, 2022 at 08:45 PM
+-- Generation Time: Apr 12, 2022 at 12:41 PM
 -- Server version: 10.4.10-MariaDB
 -- PHP Version: 7.4.0
 
@@ -36,14 +36,53 @@ CREATE TABLE IF NOT EXISTS `booking` (
   `date` date NOT NULL DEFAULT current_timestamp(),
   `serviceid` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `booking`
 --
 
 INSERT INTO `booking` (`id`, `time`, `pincode`, `date`, `serviceid`) VALUES
-(1, 13, '810265995659678', '2022-04-11', 32);
+(2, 13, '119988609933207', '2022-04-12', 50),
+(3, 13, '697193251956885', '2022-04-12', 51),
+(4, 13, '500385402261156', '2022-04-12', 52),
+(5, 13, '678162946544155', '2022-04-12', 53),
+(6, 13, '339882556846995', '2022-04-12', 54);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `contact`
+--
+
+DROP TABLE IF EXISTS `contact`;
+CREATE TABLE IF NOT EXISTS `contact` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) NOT NULL,
+  `email` varchar(255) NOT NULL,
+  `subject` varchar(255) NOT NULL,
+  `message` text NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM AUTO_INCREMENT=14 DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `contact`
+--
+
+INSERT INTO `contact` (`id`, `name`, `email`, `subject`, `message`) VALUES
+(1, 'kawan pshtiwan', 'pshtiwankawan@gmail.com', 'dddddddd', 'aaaaaaaaa'),
+(2, 'kawan pshtiwan', 'pshtiwankawan@gmail.com', 'das', 'dsadsa'),
+(3, 'kawan pshtiwan', 'pshtiwankawan@gmail.com', 'hfhg', 'jkkj'),
+(4, 'kawan pshtiwan', 'pshtiwankawan@gmail.com', 'das', 'dasdsa'),
+(5, 'dana', 'admin@admin.com', 'form body', 'my message'),
+(6, 'kawan', 'pshtiwankawan@gmail.com', 'das', 'dsada'),
+(7, 'kawan pshtiwan', 'pshtiwankawan@gmail.com', 'gdfg', 'gdfg'),
+(8, 'kawan', 'pshtiwankawan@gmail.com', 'ff', 'from delivery'),
+(9, 'kawan', 'pshtiwankawan@gmail.com', 'khjkhj', 'sas'),
+(10, 'aaaaa', 'kawan.pshtiwan@yahoo.com', 'gggggg', 'eeeeeee'),
+(11, 'kawan pshtiwan', 'pshtiwankawan@gmail.com', 'khj', 'from booking'),
+(12, 'kawan pshtiwan', 'pshtiwankawan@gmail.com', 'hfhg', 'ghfhf'),
+(13, 'kawan pshtiwan', 'pshtiwankawan@gmail.com', 'ff', 'fdsfdsf');
 
 -- --------------------------------------------------------
 
@@ -60,7 +99,19 @@ CREATE TABLE IF NOT EXISTS `delivery` (
   `date` date NOT NULL DEFAULT current_timestamp(),
   `serviceid` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=10 DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `delivery`
+--
+
+INSERT INTO `delivery` (`id`, `name`, `phone`, `address`, `date`, `serviceid`) VALUES
+(4, 'kawan pshtiwan', '7706994444', 'raparin gulan  89', '2022-04-12', 34),
+(5, 'kawan ', '7704775540', 'raparin ', '2022-04-12', 35),
+(6, 'kawan pshtiwan', '7774445522', 'raparin gulan  89', '2022-04-12', 36),
+(7, 'kawan pshtiwan', '7706994420', 'raparin gulan  89', '2022-04-12', 37),
+(8, 'kawan pshtiwan', '7704441111', 'raparin gulan  89', '2022-04-12', 38),
+(9, 'kawan pshtiwan', '7706994420', 'raparin gulan  89', '2022-04-12', 55);
 
 -- --------------------------------------------------------
 
@@ -75,7 +126,17 @@ CREATE TABLE IF NOT EXISTS `sequencenumber` (
   `serviceid` int(10) NOT NULL,
   `date` date NOT NULL DEFAULT current_timestamp(),
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=12 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=23 DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `sequencenumber`
+--
+
+INSERT INTO `sequencenumber` (`id`, `number`, `serviceid`, `date`) VALUES
+(22, 4, 49, '2022-04-12'),
+(21, 3, 48, '2022-04-12'),
+(20, 2, 47, '2022-04-12'),
+(19, 1, 46, '2022-04-12');
 
 -- --------------------------------------------------------
 
@@ -91,14 +152,28 @@ CREATE TABLE IF NOT EXISTS `service` (
   `date` date NOT NULL DEFAULT current_timestamp(),
   `subtypeid` int(10) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=33 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=56 DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `service`
 --
 
 INSERT INTO `service` (`id`, `typeid`, `status`, `date`, `subtypeid`) VALUES
-(32, 3, 'pinding', '2022-04-11', 3);
+(55, 1, 'pinding', '2022-04-12', 1),
+(54, 3, 'pinding', '2022-04-12', 4),
+(53, 3, 'pinding', '2022-04-12', 3),
+(52, 3, 'pinding', '2022-04-12', 2),
+(51, 3, 'pinding', '2022-04-12', 1),
+(50, 3, 'pinding', '2022-04-12', 1),
+(49, 2, 'pinding', '2022-04-12', 4),
+(48, 2, 'pinding', '2022-04-12', 3),
+(47, 2, 'pinding', '2022-04-12', 2),
+(46, 2, 'pinding', '2022-04-12', 1),
+(38, 1, 'pinding', '2022-04-12', 1),
+(37, 1, 'pinding', '2022-04-12', 4),
+(36, 1, 'pinding', '2022-04-12', 3),
+(35, 1, 'pinding', '2022-04-12', 2),
+(34, 1, 'pinding', '2022-04-12', 1);
 
 -- --------------------------------------------------------
 
