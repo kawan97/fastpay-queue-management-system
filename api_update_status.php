@@ -32,8 +32,10 @@
                $execu=$pdo->prepare($sql);
                $execu->execute((array('finished',$id)));
                if($execu){
-               echo json_encode(array("message" => 'successfully status code changed'));
-               http_response_code(201);  
+                header('Location:./screen.php');
+
+            //    echo json_encode(array("message" => 'successfully status code changed'));
+            //    http_response_code(201);  
                }else{
                    echo json_encode(array("message" => 'Sorry you have an error'));
                    http_response_code(500);  

@@ -41,27 +41,46 @@ if ( isset( $_POST['submit'])) {
 
 
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LogIn</title>
+    <link rel="stylesheet" href="style.css">
+    <title>Login</title>
+    <link rel="shortcut icon" href="./images/fav-icon.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" type="text/css" href="css/bizord.css">
+
 </head>
-<body class=''>
-    <form method="post">
-        <input required name="username" type="text" value='<?php echo $username; ?>' placeholder="user name">
-        <input required name="password" type="password" value='<?php echo $password; ?>' placeholder="password">
-        <button type="submit" name="submit" type="button">
-            LogIn
-        </button> 
-    </form>
-    <?php
+
+<body>
+    <center>
+        
+    <div class="container">
+        <div class="container-wrapper">
+
+            <h3 class="login-text"><i class="bi bi-person-circle ac-logo"></i>Login</h3>
+        
+            <form method="post">
+                <div class="item"><input class="input"  required name="username" type="text" value='<?php echo $username; ?>' placeholder="user name"></div> 
+                <div class="item"><input class="input" required name="password" type="password" value='<?php echo $password; ?>' placeholder="password"> </div>
+
+                <div class="item submit"><button type="submit" name="submit">Submit</button></div>
+            </form>
+
+        </div>
+        <?php
     if($showerror){
         echo '<p>cardinal error</p> ';
     }
     ?>
 
+    </div>
+    </center>
 </body>
+
 </html>

@@ -49,9 +49,29 @@
 		                <li class="nav-item">
 		                    <a class="nav-link fadeinleftbig hidden delay5" data-scroll href="#contact-part">CONTACT</a>
 		                </li>
-		                <li class="nav-item">
-		                	<a href="#quote-popup" class="quote-btn animall open-popup-link fadeinleftbig hidden delay6" id="quote-btn" data-effect="mfp-move-horizontal">CONTACT US</a>
+						<?php
+							if(!isset($_SESSION)) 
+							{ 
+								session_start(); 
+							} 
+							if(isset($_SESSION['username']) && isset($_SESSION['password'])){
+								?>
+										                <li class="nav-item">
+		                	<a href="logout.php" class="quote-btn animall " id="quote-btn">Logout</a>
 		                </li>
+						<?php
+
+							}else{
+								?>
+										                <li class="nav-item">
+		                	<a href="login.php" class="quote-btn animall " id="quote-btn">Login</a>
+		                </li>
+						<?php
+
+							}
+
+						?>
+
 		            </ul>
 	         	</div>
   			</div>

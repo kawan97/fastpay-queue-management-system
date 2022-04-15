@@ -53,21 +53,21 @@ if($typeid == 1){
         //Set PHPMailer to use SMTP.
         $mail->isSMTP();            
         //Set SMTP host name                          
-        $mail->Host = "";
+        $mail->Host = "smtp.elasticemail.com";
         //Set this to true if SMTP host requires authentication to send email
         $mail->SMTPAuth = true;                          
         //Provide username and password     
-        $mail->Username = "";                 
-        $mail->Password = "";                           
+        $mail->Username = "dyakoh.tahir@gmail.com";                 
+        $mail->Password = "772E9231097ADB2A7B4D8A68041449808D79";                           
         //If SMTP requires TLS encryption then set it
         $mail->SMTPSecure = "tls";                           
         //Set TCP port to connect to
         $mail->Port = 2525;                                   
         
-        $mail->From = "kawan.192707@spu.edu.iq";
+        $mail->From = "dyakoh.tahir@gmail.com";
         $mail->FromName = "From Fastpay Queue System";
         
-        $mail->addAddress("pshtiwankawan@gmail.com", $name);
+        $mail->addAddress("dyakoh.tahir@gmail.com", $name);
         
         $mail->isHTML(true);
         
@@ -106,6 +106,7 @@ if($typeid == 2){
     $sqlsequencenumber="SELECT * FROM `sequencenumber` WHERE date = ? ORDER BY id DESC LIMIT 1;"; 
     $stmtsequence=$pdo->prepare($sqlsequencenumber); 
     $stmtsequence->execute(array($today));
+
     $data = $stmtsequence->fetch();
     if($data==false){
     $sql="INSERT INTO sequencenumber (number,serviceid) VALUES (?,?)";  
@@ -116,7 +117,8 @@ if($typeid == 2){
     }else{
         $sql="INSERT INTO sequencenumber (number,serviceid) VALUES (?,?)";  
         $execu=$pdo->prepare($sql);
-        $number=(int)$data['number']+1;
+        $number=(int)$data['number'];
+        $number++;
         $execu->execute(array($number,$serviceid));
         echo json_encode(array("message" => $number));
         http_response_code(201); 
