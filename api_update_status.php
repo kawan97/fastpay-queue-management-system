@@ -21,11 +21,25 @@
             $execu=$pdo->prepare($sql);
             $execu->execute((array($id)));
             $row = $execu->fetch();
-        
+            
             if(!$row){
                 echo json_encode(array("message" => 'Sorry you have dont have that service'));
                 http_response_code(403);  
             }else{
+                if($row['typeid']==3){
+                    $sql="select booking.id AS bookingid ,booking.pincode,booking.time,booking.date,service.id From booking INNER JOIN
+                    service ON booking.serviceid=service.id WHERE service.status=? AND service.id=?;";
+                    $execu=$pdo->prepare($sql);
+                    $execu->execute((array($id)));
+                    $row = $execu->fetch();
+                }
+                if($row['typeid']==2){
+                    $sql="select sequencenumber.id AS seqid ,sequencenumber.number,sequencenumber.date,service.id From sequencenumber INNER JOIN
+                    service ON sequencenumber.serviceid=service.id WHERE service.id=?;";
+                    $execu=$pdo->prepare($sql);
+                    $execu->execute((array($id)));
+                    $row = $execu->fetch();
+                }
                 $sql="UPDATE service
                 SET status = ?
               WHERE id = ?;";   

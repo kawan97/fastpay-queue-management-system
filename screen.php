@@ -167,14 +167,14 @@ function callone(){
                   btn.classList.add("btn-primary");
                   btn.id = data[i].serviceid;
                   btn.onclick = function (e) {
-                   console.log(e.target.id);
+                  //  console.log(e.target.id);
                    var options = {
                      url: "api_update_status.php?id="+e.target.id,
                      dataType: "json",
                      type: "GET",
 
                      success: function(data, status, xhr) {
-                        console.log(data)
+                        // console.log(data)
                         var data={event:'callshowroom',data:data.data}
                         WS.send(JSON.stringify(data))
                         const removeel = document.getElementById('tr'+data.data.id);
@@ -202,8 +202,8 @@ function callone(){
 
             }
                 
-                console.log(data)
-                console.log(status)
+                // console.log(data)
+                // console.log(status)
 
             },
             error: function(xhr, status, error) {
