@@ -32,7 +32,5 @@ try{
     http_response_code(500);  
 }
 
-
-
-//return the json encoded values
+?>
 

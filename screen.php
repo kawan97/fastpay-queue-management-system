@@ -87,19 +87,32 @@ function myScript(e){
                bookingtable.innerHTML = ' ';
 
                 for(var i=0;i<data.length;i++){
+                  //create btn
+                  let btn = document.createElement("button");
+                  btn.innerHTML = "Done";
+                  btn.classList.add("btn");
+                  btn.classList.add("btn-primary");
+                  btn.id = data[i].serviceid;
+                  btn.onclick = function (e) {
+                   console.log(e.target);
+                    };
+                  //create btn
+
             //    console.log(data[i].pincode)
                var elem = document.createElement('tr');
-               elem.innerHTML = '<td>'+data[i].pincode+'</td><td>'+data[i].bookingid+'</td><td>'+data[i].date+'</td><td>'+data[i].serviceid+'</td><td> <a href=api_update_status.php?id='+data[i].serviceid+' data-id='+data[i].serviceid+' class="btn btn-primary bookingbtnn">Done</a></td>';
+               elem.innerHTML = '<td>'+data[i].pincode+'</td><td>'+data[i].bookingid+'</td><td>'+data[i].date+'</td><td>'+data[i].serviceid+'</td>';
                 bookingtable.appendChild(elem);
-
+                var tdelement = document.createElement('td');
+                tdelement.appendChild(btn);
+                elem.appendChild(tdelement);  
             }
             if(data.length==0){
                 bookingtable.innerHTML = '';
 
             }
                 
-                console.log(data)
-                console.log(status)
+                // console.log(data)
+                // console.log(status)
 
             },
             error: function(xhr, status, error) {
@@ -126,10 +139,23 @@ function callone(){
                showroomtable.innerHTML = ' ';
 
                 for(var i=0;i<data.length;i++){
+                   //create btn
+                  let btn = document.createElement("button");
+                  btn.innerHTML = "Done";
+                  btn.classList.add("btn");
+                  btn.classList.add("btn-primary");
+                  btn.id = data[i].serviceid;
+                  btn.onclick = function (e) {
+                   console.log(e.target);
+                    };
+                  //create btn
             //    console.log(data[i].pincode)
                var elem = document.createElement('tr');
-               elem.innerHTML = '<td>'+data[i].seqid+'</td><td>'+data[i].number+'</td><td>'+data[i].date+'</td><td>'+data[i].serviceid+'</td><td> <a href=api_update_status.php?id='+data[i].serviceid+' data-id='+data[i].serviceid+' class="btn btn-primary bookingbtnn">Done</a></td>';
+               elem.innerHTML = '<td>'+data[i].seqid+'</td><td>'+data[i].number+'</td><td>'+data[i].date+'</td><td>'+data[i].serviceid+'</td>';
                showroomtable.appendChild(elem);
+               var tdelement = document.createElement('td');
+                tdelement.appendChild(btn);
+                elem.appendChild(tdelement);  
 
             }
             if(data.length==0){
