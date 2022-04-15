@@ -64,6 +64,8 @@
 </body>
 
 <script>
+   var wsurl='wss://demo.piesocket.com/v3/channel_1231?api_key=oCdCMcMPQpbvNjUIzqtvF1d2X2okWpDQj4AwARJuAgtjhzKxVEjQU6IdCjwm&notify_self';
+    const WS=new WebSocket(wsurl);
 var myElement = document.getElementById("demo");
 var bookingtable = document.getElementById("bookingtable");
 var showroomtable = document.getElementById("showroomtable");
@@ -94,12 +96,31 @@ function myScript(e){
                   btn.classList.add("btn-primary");
                   btn.id = data[i].serviceid;
                   btn.onclick = function (e) {
-                   console.log(e.target);
+                  //  console.log(e.target.id);
+                   var options = {
+                     url: "api_update_status.php?id="+e.target.id,
+                     dataType: "json",
+                     type: "GET",
+
+                     success: function(data, status, xhr) {
+                        // console.log(data)
+                        var data={event:'callbooking',data:data.data}
+                        WS.send(JSON.stringify(data))
+                        const removeel = document.getElementById('tr'+data.data.id);
+                        removeel.remove();
+                      },
+                   error: function(xhr, status, error) {
+                     console.log(error)
+                    }
+                  };
+        $.ajax(options);
                     };
                   //create btn
 
             //    console.log(data[i].pincode)
                var elem = document.createElement('tr');
+               elem.id ='tr'+data[i].serviceid;
+
                elem.innerHTML = '<td>'+data[i].pincode+'</td><td>'+data[i].bookingid+'</td><td>'+data[i].date+'</td><td>'+data[i].serviceid+'</td>';
                 bookingtable.appendChild(elem);
                 var tdelement = document.createElement('td');
@@ -146,11 +167,29 @@ function callone(){
                   btn.classList.add("btn-primary");
                   btn.id = data[i].serviceid;
                   btn.onclick = function (e) {
-                   console.log(e.target);
+                   console.log(e.target.id);
+                   var options = {
+                     url: "api_update_status.php?id="+e.target.id,
+                     dataType: "json",
+                     type: "GET",
+
+                     success: function(data, status, xhr) {
+                        console.log(data)
+                        var data={event:'callshowroom',data:data.data}
+                        WS.send(JSON.stringify(data))
+                        const removeel = document.getElementById('tr'+data.data.id);
+                        removeel.remove();
+                      },
+                   error: function(xhr, status, error) {
+                     console.log(error)
+                    }
+                  };
+        $.ajax(options);
                     };
                   //create btn
             //    console.log(data[i].pincode)
                var elem = document.createElement('tr');
+               elem.id ='tr'+data[i].serviceid;
                elem.innerHTML = '<td>'+data[i].seqid+'</td><td>'+data[i].number+'</td><td>'+data[i].date+'</td><td>'+data[i].serviceid+'</td>';
                showroomtable.appendChild(elem);
                var tdelement = document.createElement('td');
@@ -176,12 +215,6 @@ function callone(){
 
 }
 
-    // var bookingtable = document.getElementsByClassName("bookingbtnn");
-    // for (var i = 0; i < bookingtable.length; i++) {
-    //     bookingtable[i].addEventListener("click", changestatus);
-    // }
-    // function changestatus(e){
-    //     console.log('click me')
-    // }
+
 
     </script>
