@@ -11,18 +11,19 @@ require_once "dbcon.php";
 //query to return the values
 try{
     $pincode=addslashes((htmlentities($_GET['pincode'])));
-    $sql="select booking.id AS bookingid ,booking.pincode,booking.time,booking.date,service.id From booking INNER JOIN
+    $sql="select booking.id AS bookingid ,booking.pincode,booking.time,booking.date,service.id,service.subtypeid AS servicetype From booking INNER JOIN
     service ON booking.serviceid=service.id WHERE service.status=? AND service.date=? AND booking.pincode LIKE ? ORDER BY booking.id DESC;"; 
     $execu=$pdo->prepare($sql);
     $today= date('Y-m-d', time());
-    $execu->execute((array('pinding',$today,"%$pincode%")));
+    $execu->execute((array('pinding',$today,"$pincode%")));
     while ($row = $execu->fetch()){
         $return_arr[] = array(
             "pincode" => $row['pincode'],
             "time" => $row['time'],
-            "date" => $row['date'],
+            "date" => $row['time'],
             "serviceid" => $row['id'],
             "bookingid"=>$row['bookingid'],
+            "servicetype"=>$row['servicetype']
         );
     }
     echo json_encode($return_arr);

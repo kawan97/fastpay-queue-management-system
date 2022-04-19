@@ -14,7 +14,7 @@
       <th scope="col">seqid</th>
       <th scope="col">number</th>
       <th scope="col">date</th>
-      <th scope="col">serviceid</th>
+      <th scope="col">servicetype</th>
     </tr>
   </thead>
   <tbody id="showroomtable">
@@ -42,8 +42,8 @@
     <tr>
       <th scope="col">pincode</th>
       <th scope="col">bookingid</th>
-      <th scope="col">date</th>
-      <th scope="col">serviceid</th>
+      <th scope="col">time</th>
+      <th scope="col">servicetype</th>
     </tr>
   </thead>
   <tbody id="bookingtable">
@@ -120,8 +120,24 @@ function myScript(e){
             //    console.log(data[i].pincode)
                var elem = document.createElement('tr');
                elem.id ='tr'+data[i].serviceid;
+                  var typeofser=""
+                  if(data[i].servicetype==1){
+                    var typeofser="Balance"
 
-               elem.innerHTML = '<td>'+data[i].pincode+'</td><td>'+data[i].bookingid+'</td><td>'+data[i].date+'</td><td>'+data[i].serviceid+'</td>';
+                  }
+                  if(data[i].servicetype==2){
+                    var typeofser="Internet Service"
+
+                  }
+                  if(data[i].servicetype==3){
+                    var typeofser="Service Issue"
+
+                  }
+                  if(data[i].servicetype==4){
+                    var typeofser="MyTV-"
+
+                  }
+               elem.innerHTML = '<td>'+data[i].pincode+'</td><td>'+data[i].bookingid+'</td><td>'+data[i].date+'</td><td>'+typeofser+'</td>';
                 bookingtable.appendChild(elem);
                 var tdelement = document.createElement('td');
                 tdelement.appendChild(btn);
@@ -167,6 +183,7 @@ function callone(){
                   btn.classList.add("btn-primary");
                   btn.id = data[i].serviceid;
                   btn.onclick = function (e) {
+
                   //  console.log(e.target.id);
                    var options = {
                      url: "api_update_status.php?id="+e.target.id,
@@ -188,9 +205,26 @@ function callone(){
                     };
                   //create btn
             //    console.log(data[i].pincode)
+            var typeofser="aas"
+                  if(data[i].servicetype==1){
+                    var typeofser="Balance"
+
+                  }
+                  if(data[i].servicetype==2){
+                    var typeofser="Internet Service"
+
+                  }
+                  if(data[i].servicetype==3){
+                    var typeofser="Service Issue"
+
+                  }
+                  if(data[i].servicetype==4){
+                    var typeofser="MyTV-"
+
+                  }
                var elem = document.createElement('tr');
                elem.id ='tr'+data[i].serviceid;
-               elem.innerHTML = '<td>'+data[i].seqid+'</td><td>'+data[i].number+'</td><td>'+data[i].date+'</td><td>'+data[i].serviceid+'</td>';
+               elem.innerHTML = '<td>'+data[i].seqid+'</td><td>'+data[i].number+'</td><td>'+data[i].date+'</td><td>'+typeofser+'</td>';
                showroomtable.appendChild(elem);
                var tdelement = document.createElement('td');
                 tdelement.appendChild(btn);

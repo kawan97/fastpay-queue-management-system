@@ -27,18 +27,18 @@
                 http_response_code(403);  
             }else{
                 if($row['typeid']==3){
-                    $sql="select booking.id AS bookingid ,booking.pincode,booking.time,booking.date,service.id From booking INNER JOIN
-                    service ON booking.serviceid=service.id WHERE service.status=? AND service.id=?;";
+                    $sql="select booking.id AS bookingid ,booking.pincode,booking.time,booking.date,service.id,service.subtypeid AS servicetype From booking INNER JOIN
+                    service ON booking.serviceid=service.id WHERE   service.id=?;";
                     $execu=$pdo->prepare($sql);
                     $execu->execute((array($id)));
-                    $row = $execu->fetch();
+                    $secondrow = $execu->fetch();
                 }
                 if($row['typeid']==2){
                     $sql="select sequencenumber.id AS seqid ,sequencenumber.number,sequencenumber.date,service.id From sequencenumber INNER JOIN
                     service ON sequencenumber.serviceid=service.id WHERE service.id=?;";
                     $execu=$pdo->prepare($sql);
                     $execu->execute((array($id)));
-                    $row = $execu->fetch();
+                    $secondrow = $execu->fetch();
                 }
                 $sql="UPDATE service
                 SET status = ?
@@ -47,7 +47,7 @@
                $execu->execute((array('finished',$id)));
                if($execu){
                 // header('Location:./screen.php');
-               echo json_encode(array("message" => 'successfully status code changed',"data"=>$row));
+               echo json_encode(array("message" => 'successfully status code changed',"data"=>$secondrow));
                http_response_code(201);  
                }else{
                    echo json_encode(array("message" => 'Sorry you have an error'));

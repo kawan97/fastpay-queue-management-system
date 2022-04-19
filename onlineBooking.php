@@ -16,7 +16,9 @@
 	<link rel="stylesheet" type="text/css" href="css/animate.css">
 	<link rel="stylesheet" type="text/css" href="css/bizord.css">
 
-	
+	<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+		<script src="https://smtpjs.com/v3/smtp.js"></script>
 </head>
 <body>
 	<!-- Start preloader -->
@@ -301,18 +303,36 @@
         $(this).addClass('active');
     });
 	</script>
-	<script>
+<script>
 		$(".pop").click(function(e){
-
-
 			var subtypeid=e.target.getAttribute("data-number");
-			var check=true;
+			var name='';
+			var time='';
+	Swal.fire({
+  title: 'Please provide the following:',
+  html: `<input type="text" id="name" class="swal2-input" placeholder="Name">
+  <input type="time" id="time" name="appt" min="09:00" max="18:00" class="swal2-input" required>`,
+  confirmButtonText: 'Confirm',
+  focusConfirm: false,
+  preConfirm: () => {
+	var check=true;
+
+     name = Swal.getPopup().querySelector('#name').value
+     time = Swal.getPopup().querySelector('#time').value
+
+
+    if (!name || !time) {
+    		Swal.showValidationMessage(`Please provide the details.`)
+			var check=false;
+    }
+	 
 				// add to db
-	if(check==true){
+                if(check==true){
         objforbooking = {
             "typeid": '3',
             "subtypeid": subtypeid,
-            "time":'13'
+            "time":time,
+            "name":name
         };
 	var json = JSON.stringify(objforbooking);
 
@@ -325,9 +345,10 @@ var options = {
 	success: function(data, status, xhr) {
 		// console.log(data['message'])
 		// console.log(status)
-		swal({
-			  title: "Thank you!",
-			  text: data['message'],
+		Swal.fire({
+			  title: "Thank you "+data['name'],
+			html:
+			'<p> Your number is ' + data['number']+" <br> Please be at  fastpay showroom at "+data['time']+'</p> <b style="color:red; font-size:24px;"> <br> Please take a screenshot of this screen</b> ',
 			  icon: "success",
 			})
 		
@@ -345,14 +366,16 @@ $.ajax(options);
 
 	}
 	
-	//nd add to db
-
+	//end add to db
+    
+  }
+})
 		});
 
 
 
-
-			//form 
+		
+	//form 
 	const form1 = document.getElementById('form1');
 	const form2 = document.getElementById('form2');
 
@@ -389,7 +412,7 @@ $.ajax(options);
 				event.target.subject.value="";
 				event.target.email.value="";
 				event.target.name.value="";
-				swal({
+				swal.fire({
 			  title: "Thank you!",
 			  text: 'your message is sended successfully',
 			  icon: "success",
@@ -397,7 +420,7 @@ $.ajax(options);
             },
             error: function(xhr, status, error) {
                 // console.log(error)
-				swal({
+				swal.fire({
 			  title: "you have an error!",
 			  text: "sorry you have an error please call support ...",
 			  icon: "error",

@@ -131,19 +131,20 @@ if($typeid == 2){
 //add booking random number
 if($typeid == 3){
     //get time
+    $name = $data['name'];
+
     $time = $data['time'];
     $getserviceid=$pdo->lastInsertId();
     $serviceid=(int)$getserviceid;
     //add random pin code
-    $num1 = rand(100000,999999);
-    $num2 = rand(100000,999999);
-    $num3 = rand(100,999);
-    $endString = $num1.$num2.$num3;
+    $num1 = rand(1,9999);
+ 
+    $endString = $num1;
 
-    $sql="INSERT INTO booking (time,pincode,serviceid) VALUES (?,?,?)";  
+    $sql="INSERT INTO booking (time,pincode,serviceid,name) VALUES (?,?,?,?)";  
     $execu=$pdo->prepare($sql);
-    $execu->execute(array($time,$endString,$serviceid));
-    echo json_encode(array("message" =>"you successfully booking and your pin code is :".$endString));
+    $execu->execute(array($time,$endString,$serviceid,$name));
+    echo json_encode(array("number" =>$endString,"name"=>$name,"time"=>$time));
     http_response_code(201); 
 }
 
