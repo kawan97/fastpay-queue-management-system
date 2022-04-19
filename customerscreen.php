@@ -15,7 +15,7 @@
         <table class="table table-striped">
             <thead>
                 <tr>
-                <th scope="col">seqid</th>
+                <th scope="col">service Type</th>
                 <th scope="col">number</th>
                 <th scope="col">date</th>
                 <th scope="col">serviceid</th>
@@ -40,12 +40,38 @@
     WS.onmessage= (payload) =>{
         var data=JSON.parse(payload['data'])
         if(data.event=='callshowroom'){
+            var typeofser="aas"
+                  if(data.data.servicetype==1){
+                    var typeofser="Balance"
+
+                  }
+                  if(data.data.servicetype==2){
+                    var typeofser="Internet Service"
+
+                  }
+                  if(data.data.servicetype==3){
+                    var typeofser="Service Issue"
+
+                  }
+                  if(data.data.servicetype==4){
+                    var typeofser="MyTV+"
+
+                  }
             // console.log(data.data)
         var elem = document.createElement('tr');
         elem.id ='tr'+data.serviceid;
-        elem.innerHTML = '<td>'+data.data.seqid+'</td><td>'+data.data.number+'</td><td>'+data.data.date+'</td><td>'+data.data.id+'</td>';
+        elem.innerHTML = '<td>'+typeofser+'</td><td>'+data.data.number+'</td><td>'+data.data.date+'</td><td>'+data.data.id+'</td>';
         alltable.prepend(elem);
-
+        //voice
+        let utter = new SpeechSynthesisUtterance();
+        utter.lang = 'en-US';
+        utter.text = 'customer number '+data.data.number+' for '+typeofser;
+        utter.volume = 0.5;
+        window.speechSynthesis.speak(utter);
+        // utter.onend = function() {
+        //     alert('Speech has finished');
+        // }
+        //voice
         }
     }
 

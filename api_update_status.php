@@ -34,7 +34,7 @@
                     $secondrow = $execu->fetch();
                 }
                 if($row['typeid']==2){
-                    $sql="select sequencenumber.id AS seqid ,sequencenumber.number,sequencenumber.date,service.id From sequencenumber INNER JOIN
+                    $sql="select sequencenumber.id AS seqid ,sequencenumber.number,sequencenumber.date,service.id,service.subtypeid AS servicetype From sequencenumber INNER JOIN
                     service ON sequencenumber.serviceid=service.id WHERE service.id=?;";
                     $execu=$pdo->prepare($sql);
                     $execu->execute((array($id)));

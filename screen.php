@@ -134,7 +134,7 @@ function myScript(e){
 
                   }
                   if(data[i].servicetype==4){
-                    var typeofser="MyTV-"
+                    var typeofser="MyTV+"
 
                   }
                elem.innerHTML = '<td>'+data[i].pincode+'</td><td>'+data[i].bookingid+'</td><td>'+data[i].date+'</td><td>'+typeofser+'</td>';
@@ -219,7 +219,7 @@ function callone(){
 
                   }
                   if(data[i].servicetype==4){
-                    var typeofser="MyTV-"
+                    var typeofser="MyTV+"
 
                   }
                var elem = document.createElement('tr');
