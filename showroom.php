@@ -162,6 +162,8 @@ var options = {
 			  text: "Your Number is :"+data['message'],
 			  icon: "success",
 			})
+			localStorage.setItem('jsnumber', data['message']);
+			window.open("printpage.html", "", "width=200,height=100");
 		
 	},
 	error: function(xhr, status, error) {
