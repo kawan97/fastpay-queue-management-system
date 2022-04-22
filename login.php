@@ -33,7 +33,13 @@ if ( isset( $_POST['submit'])) {
     $_SESSION['username']=$getusername; 
     $_SESSION['password']=$getpassword; 
     setcookie("fullname", $getfullname, time() + (86400 * 2), "/");
+    ob_start();
     header ('Location: index.php'); 
+    ?>
+    <script>window.location.href = 'index.php'; //Will take you to Google.
+</script>
+
+    <?php
     }else{
         $showerror=true;
 
