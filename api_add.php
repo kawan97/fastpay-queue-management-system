@@ -103,10 +103,13 @@ if($typeid == 2){
     $getserviceid=$pdo->lastInsertId();
     $serviceid=(int)$getserviceid;
     //get last sequnce number
-    $today= date('Y-m-d', time());
-    $sqlsequencenumber="SELECT * FROM `sequencenumber` WHERE date = ? ORDER BY id DESC LIMIT 1;"; 
-    $stmtsequence=$pdo->prepare($sqlsequencenumber); 
-    $stmtsequence->execute(array($today));
+      //get last sequnce number
+      $today= date('Y-m-d 0:0:0', time());
+      $addone = date('Y-m-d 0:0:0', strtotime("+1 day"));
+  
+      $sqlsequencenumber="SELECT * FROM `sequencenumber` WHERE date  >= ? and date < ? ORDER BY id DESC LIMIT 1;"; 
+      $stmtsequence=$pdo->prepare($sqlsequencenumber); 
+      $stmtsequence->execute(array($today,$addone));
 
     $data = $stmtsequence->fetch();
     if($data==false){
@@ -121,7 +124,7 @@ if($typeid == 2){
         $number=(int)$data['number'];
         $number++;
         $execu->execute(array($number,$serviceid));
-        echo json_encode(array("message" => $number));
+        echo json_encode(array("message" => $today));
         http_response_code(201); 
     }
  
