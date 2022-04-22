@@ -1,3 +1,5 @@
+<?php
+session_start(); ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -54,34 +56,34 @@
 					<div class="col-12 col-lg-12 col-xl-12">
 						<div class="row">
 							<div class="col-xs-12 col-md-3 img-box blog-content">
-								<a href="blog-detail.php" class="zoom"><img src="images/blog-img1.jpg" alt="blog-img1"></a>
+								<a data-number="1" class="zoom pop"><img src="images/blog-img1.jpg" alt="blog-img1"></a>
 								<div class="blog-detail">
 									<p class="bloger-date">Balance</p>
-									<h3 class="head-three"><a href="blog-detail.php">Deposit/withdraw Balance</a></h3>
+									<h3 class="head-three"><a >Deposit/withdraw Balance</a></h3>
 									<a data-number="1" class="readmore-btn pop">Choose</a>
 								</div>
 							</div>
 							<div class="col-xs-12 col-md-3 img-box blog-content">
-								<a href="blog-detail.php" class="zoom"><img src="images/blog-img2.jpg" alt="blog-img2"></a>
+								<a data-number="2" class="zoom pop"><img src="images/blog-img2.jpg" alt="blog-img2"></a>
 								<div class="blog-detail">
 									<p class="bloger-date">Internet Service</p>
-									<h3 class="head-three"><a href="blog-detail.php">Request Internet Services</a></h3>
+									<h3 class="head-three"><a >Request Internet Services</a></h3>
 									<a data-number="2" class="readmore-btn pop">Choose</a>
 								</div>
 							</div>
 							<div class="col-xs-12 col-md-3 img-box blog-content">
-								<a href="blog-detail.php" class="zoom"><img src="images/blog-img3.jpg" alt="blog-img3"></a>
+								<a data-number="3" class="zoom pop"><img src="images/blog-img3.jpg" alt="blog-img3"></a>
 								<div class="blog-detail">
 									<p class="bloger-date">Service Issue</p>
-									<h3 class="head-three"><a href="blog-detail.php">Service Issues</a></h3>
+									<h3 class="head-three"><a >Service Issues</a></h3>
 									<a data-number="3" class="readmore-btn pop">Choose</a>
 								</div>
 							</div>
 							<div class="col-xs-12 col-md-3 img-box blog-content">
-								<a href="blog-detail.php" class="zoom"><img src="images/blog-img4.jpg" alt="blog-img4"></a>
+								<a data-number="4" class="zoom pop"><img src="images/blog-img4.jpg" alt="blog-img4"></a>
 								<div class="blog-detail">
 									<p class="bloger-date">MyTV+</p>
-									<h3 class="head-three"><a href="blog-detail.php">Issues with MyTV+</a></h3>
+									<h3 class="head-three"><a >Issues with MyTV+</a></h3>
 									<a data-number="4" class="readmore-btn pop">Choose</a>
 								</div>
 							</div>
