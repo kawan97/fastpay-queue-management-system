@@ -22,28 +22,31 @@ require_once "dbcon.php";
 try{
     if($num!=2){
         $sql="select sequencenumber.id AS seqid ,sequencenumber.number,sequencenumber.date,service.id,service.subtypeid AS servicetype From sequencenumber INNER JOIN
-        service ON sequencenumber.serviceid=service.id WHERE service.status=? AND sequencenumber.date=? and service.subtypeid=1 ORDER BY sequencenumber.id ASC LIMIT 1;";
+        service ON sequencenumber.serviceid=service.id WHERE service.status=? AND sequencenumber.date  >= ? and sequencenumber.date < ? and service.subtypeid=1 ORDER BY sequencenumber.id ASC LIMIT 1;";
         $execu=$pdo->prepare($sql);
-        $today= date('Y-m-d', time());
-        $execu->execute((array('pinding',$today)));
+        $today= date('Y-m-d 0:0:0', time());
+        $addone = date('Y-m-d 0:0:0', strtotime("+1 day"));
+        
+        $execu->execute((array('pinding',$today,$addone)));
         $data = $execu->fetch();
         if($data==false){
             $sql="select sequencenumber.id AS seqid ,sequencenumber.number,sequencenumber.date,service.id,service.subtypeid AS servicetype From sequencenumber INNER JOIN
-            service ON sequencenumber.serviceid=service.id WHERE service.status=? AND sequencenumber.date=? and service.subtypeid!=1 ORDER BY sequencenumber.id ASC LIMIT 1;";   
+            service ON sequencenumber.serviceid=service.id WHERE service.status=? AND sequencenumber.date  >= ? and sequencenumber.date < ? and service.subtypeid!=1 ORDER BY sequencenumber.id ASC LIMIT 1;";   
             $num=0;
         }else{
             $num=$num+1;
         }
     }else{
         $sql="select sequencenumber.id AS seqid ,sequencenumber.number,sequencenumber.date,service.id,service.subtypeid AS servicetype From sequencenumber INNER JOIN
-        service ON sequencenumber.serviceid=service.id WHERE service.status=? AND sequencenumber.date=? and service.subtypeid!=1 ORDER BY sequencenumber.id ASC LIMIT 1;";
+        service ON sequencenumber.serviceid=service.id WHERE service.status=? AND sequencenumber.date  >= ? and sequencenumber.date < ? and service.subtypeid!=1 ORDER BY sequencenumber.id ASC LIMIT 1;";
         $execu=$pdo->prepare($sql);
-        $today= date('Y-m-d', time());
-        $execu->execute((array('pinding',$today)));
+        $today= date('Y-m-d 0:0:0', time());
+        $addone = date('Y-m-d 0:0:0', strtotime("+1 day"));
+        $execu->execute((array('pinding',$today,$addone)));
         $data = $execu->fetch();
         if($data==false){
             $sql="select sequencenumber.id AS seqid ,sequencenumber.number,sequencenumber.date,service.id,service.subtypeid AS servicetype From sequencenumber INNER JOIN
-            service ON sequencenumber.serviceid=service.id WHERE service.status=? AND sequencenumber.date=? and service.subtypeid=1 ORDER BY sequencenumber.id ASC LIMIT 1;";   
+            service ON sequencenumber.serviceid=service.id WHERE service.status=? AND sequencenumber.date  >= ? and sequencenumber.date < ? and service.subtypeid=1 ORDER BY sequencenumber.id ASC LIMIT 1;";   
         }
         $num=0;
     }
@@ -51,7 +54,9 @@ try{
 
     $execu=$pdo->prepare($sql);
     $today= date('Y-m-d', time());
-    $execu->execute((array('pinding',$today)));
+    $addone = date('Y-m-d 0:0:0', strtotime("+1 day"));
+
+    $execu->execute((array('pinding',$today,$addone)));
     while ($row = $execu->fetch()){
         $return_arr[] = array(
             "seqid" => $row['seqid'],

@@ -208,6 +208,7 @@ function callone(){
                   //create btn
             //    console.log(data[i].pincode)
             var typeofser="aas"
+            // console.log(data[i])
                   if(data[i].servicetype==1){
                     var typeofser="Balance"
 

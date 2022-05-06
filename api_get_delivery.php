@@ -15,10 +15,11 @@ require_once "dbcon.php";
 //query to return the values
 try{
     $sql="select delivery.id AS deliveryid ,delivery.phone,delivery.name,delivery.address,delivery.date,service.id,service.subtypeid AS servicetype From delivery INNER JOIN
-    service ON delivery.serviceid=service.id WHERE service.status=? AND delivery.date=? ORDER BY delivery.id ASC;"; 
-    $execu=$pdo->prepare($sql);
-    $today= date('Y-m-d', time());
-    $execu->execute((array('pinding',$today)));
+    service ON delivery.serviceid=service.id WHERE service.status=? AND delivery.date  >= ? and delivery.date < ?  ORDER BY delivery.id ASC;"; 
+    $execu=$pdo->prepare($sql); 
+    $today= date('Y-m-d 0:0:0', time());
+    $addone = date('Y-m-d 0:0:0', strtotime("+1 day"));
+    $execu->execute((array('pinding',$today,$addone)));
     while ($row = $execu->fetch()){
         $return_arr[] = array(
             "deliveryid" => $row['deliveryid'],

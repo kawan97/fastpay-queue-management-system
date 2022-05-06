@@ -151,7 +151,7 @@ session_start(); ?>
 					<div class="col-12 col-lg-12 col-xl-12">
 						<div class="row">
 							<div class="col-xs-12 col-md-3 img-box blog-content">
-								<a data-number="2" class="zoom pop"><img src="images/blog-img1.jpg" alt="blog-img1"></a>
+								<a  class="zoom "><img data-number="1" class="pop" src="images/blog-img1.jpg" alt="blog-img1"></a>
 								<div class="blog-detail">
 									<p class="bloger-date">Balance</p>
 									<h3 class="head-three"><a>Deposit/withdraw Balance</a></h3>
@@ -159,7 +159,7 @@ session_start(); ?>
 								</div>
 							</div>
 							<div class="col-xs-12 col-md-3 img-box blog-content">
-								<a data-number="2" class="zoom pop"><img src="images/blog-img2.jpg" alt="blog-img2"></a>
+								<a  class="zoom "><img data-number="2" class="pop" src="images/blog-img2.jpg" alt="blog-img2"></a>
 								<div class="blog-detail">
 									<p class="bloger-date">Internet Service</p>
 									<h3 class="head-three"><a>Request Internet Services</a></h3>
@@ -167,7 +167,7 @@ session_start(); ?>
 								</div>
 							</div>
 							<div class="col-xs-12 col-md-3 img-box blog-content">
-								<a data-number="3" class="zoom pop"><img src="images/blog-img3.jpg" alt="blog-img3"></a>
+								<a class="zoom "><img data-number="3" class="pop" src="images/blog-img3.jpg" alt="blog-img3"></a>
 								<div class="blog-detail">
 									<p class="bloger-date">Service Issue</p>
 									<h3 class="head-three"><a>Service Issues</a></h3>
@@ -175,7 +175,7 @@ session_start(); ?>
 								</div>
 							</div>
 							<div class="col-xs-12 col-md-3 img-box blog-content">
-								<a data-number="4" class="zoom pop"><img src="images/blog-img4.jpg" alt="blog-img4"></a>
+								<a class="zoom "><img data-number="4" class="pop" src="images/blog-img4.jpg" alt="blog-img4"></a>
 								<div class="blog-detail">
 									<p class="bloger-date">MyTV+</p>
 									<h3 class="head-three"><a>Issues with MyTV+</a></h3>

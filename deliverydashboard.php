@@ -6,7 +6,7 @@ session_start(); ?>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Customer Screen</title>
+    <title> Screen</title>
     <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
@@ -24,6 +24,8 @@ session_start(); ?>
                 <th scope="col">phone</th>
                 <th scope="col">address</th>
                 <th scope="col">date</th>
+                <th scope="col">type</th>
+
                 </tr>
             </thead>
             <tbody id="alltable">
@@ -80,10 +82,29 @@ function callone(){
                   };
         $.ajax(options);
                     };
+
+                    var typeofser="aas"
+            console.log(data[i])
+                  if(data[i].servicetype==1){
+                    var typeofser="Balance"
+
+                  }
+                  if(data[i].servicetype==2){
+                    var typeofser="Internet Service"
+
+                  }
+                  if(data[i].servicetype==3){
+                    var typeofser="Service Issue"
+
+                  }
+                  if(data[i].servicetype==4){
+                    var typeofser="MyTV+"
+
+                  }
                   //create btn
                var elem = document.createElement('tr');
                elem.id ='tr'+data[i].serviceid;
-               elem.innerHTML = '<td>'+data[i].deliveryid+'</td><td>'+data[i].name+'</td><td>'+data[i].phone+'</td><td>'+data[i].address+'</td><td>'+data[i].date+'</td>';
+               elem.innerHTML = '<td>'+data[i].deliveryid+'</td><td>'+data[i].name+'</td><td>'+data[i].phone+'</td><td>'+data[i].address+'</td><td>'+data[i].date+'</td><td>'+typeofser+'</td>';
                alltable.appendChild(elem);
                var tdelement = document.createElement('td');
                 tdelement.appendChild(btn);

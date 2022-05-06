@@ -68,7 +68,7 @@ if($typeid == 1){
         $mail->From = "dyakoh.tahir@gmail.com";
         $mail->FromName = "From Fastpay Queue System";
         
-        $mail->addAddress("dyakoh.tahir@gmail.com", $name);
+        $mail->addAddress("Support@fastpay-service.site", $name);
         
         $mail->isHTML(true);
         
@@ -124,7 +124,7 @@ if($typeid == 2){
         $number=(int)$data['number'];
         $number++;
         $execu->execute(array($number,$serviceid));
-        echo json_encode(array("message" => $today));
+        echo json_encode(array("message" => $number));
         http_response_code(201); 
     }
  
